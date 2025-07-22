@@ -1,9 +1,9 @@
-name = "Harish"
-age = 21
-new_age = 9
+name = "Ravi"
+age = 30
+new_age = 5
 
-"""print("My name is "+name+"I'm "+age+" years old." ) #String Concatenation
-TypeError: can only concatenate str (not "int") to str"""
+# print("My Name is " +name + " im " + age+ " years old") # Concatenation
+# TypeError: can only concatenate str (not "int") to str
+print(f"My Name is {name} and im {age+new_age} years old") # Interpolation
 
-print(f"My Name is {name} I'm {age} years old") #Interpolation Method
-print(f"My Name is {name} I'm {age+new_age} years old") #Interpolation Method using Concatenation also like inside part.
+
