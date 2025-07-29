@@ -92,7 +92,7 @@ match choice:
         print("Invalid")"""
 
 #Nested conditions
-age=22
+"""age=22
 has_id=True
 
 if age>=21:
@@ -101,4 +101,54 @@ if age>=21:
     else:
         print("To show Id to enter")
 else:
-    print("you are too young to enter")
+    print("you are too young to enter")"""
+
+#while loop
+"""password = "Harish123"
+user_input = ""
+while password != user_input:
+    user_input = input("Enter Password : ")
+print("Access Granted")"""
+
+#for loop
+"""for i in range(1,20):
+    if i%2==0:
+        print(i,end=" ")"""
+
+"""count=2
+while count<=20:
+    print(count)
+    count+=2"""
+
+"""for i in range(2,20,2):
+    print(i)"""
+
+"""for i in range(1,4):
+    for j in range(1,11):
+        print(f"{i} X {j} = {i*j}")"""
+
+"""i=1
+while i<=3:
+    j=1
+    while j<=10:
+        print(f"{i} X {j} = {i*j}")
+        j+=1
+    i+=1"""
+
+import random
+
+otp=random.randint(0000,9999)
+print(otp)
+
+attempts = 3
+while attempts:
+    user_otp = int(input("Enter otp : "))
+    if len(str(user_otp)) != 4:
+        print("OTP Must be 4 digit number only")
+    if user_otp == otp:
+        print("Correct OTP - Success")
+        break
+    attempts -= 1
+else:
+    print("Maximum attempts done, try after 24 hours")
+
