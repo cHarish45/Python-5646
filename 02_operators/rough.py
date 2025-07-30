@@ -135,7 +135,7 @@ while i<=3:
         j+=1
     i+=1"""
 
-import random
+"""import random
 
 otp=random.randint(0000,9999)
 print(otp)
@@ -150,5 +150,60 @@ while attempts:
         break
     attempts -= 1
 else:
-    print("Maximum attempts done, try after 24 hours")
+    print("Maximum attempts done, try after 24 hours")"""
 
+# Input student details
+"""student_id = input("Enter Your ID: ")
+student_name = input("Enter Your Name: ")
+
+# Initialize variables
+total_score = 0
+subject_count = 0
+
+# Loop to collect subject scores
+while True:
+    score = int(input("\nEnter score for Subject " + str(subject_count + 1) + ": "))
+    total_score = total_score + score
+    subject_count = subject_count + 1
+
+    another = input("Do you want to enter another score? (yes/no): ")
+    if another != "yes":
+        break
+
+# Set attendance (fixed as per image)
+attendance = 50.0
+
+# Calculate average
+average_score = total_score / subject_count
+
+# Determine performance using if conditions
+if average_score >= 85:
+    performance = "Excellent"
+else:
+    if average_score >= 70:
+        performance = "Good"
+    else:
+        if average_score >= 50:
+            performance = "Average"
+        else:
+            performance = "Poor"
+
+# Attendance status
+if attendance < 75:
+    attendance_status = "WARNING - Low Attendance"
+else:
+    attendance_status = "Satisfactory Attendance"
+
+# Output results
+print("\n======== Student Details ========")
+print("Student ID:", student_id)
+print("Student Name:", student_name)
+print("Student Attendance:", str(attendance) + "%")
+print("Total Score:", total_score)
+print("Total Number Of Subjects:", subject_count)
+print("Average Score:", round(average_score, 1))
+print("Performance:", performance)
+print("Attendance:", attendance_status)"""
+
+a="python"
+print(a[-5:-1])
