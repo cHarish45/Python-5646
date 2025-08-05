@@ -205,5 +205,91 @@ print("Average Score:", round(average_score, 1))
 print("Performance:", performance)
 print("Attendance:", attendance_status)"""
 
-a="python"
-print(a[-5:-1])
+#a="python"
+#print(a[-5:-1])
+
+# Enhanced LMS Grade Tracker with String Operations
+# Variables - Data types - operators - casting - conditionals
+# loops - strings - slicing - indexing - string operations
+
+print("="*30)
+print("Enhanced LMS Grade Tracker")
+print("="*30)
+
+student_valid_id = False
+while not student_valid_id:
+    student_id = input("Enter id : ")
+    if student_id.startswith("-") and student_id[1:].isdigit():
+        print("please input Positive numbers only")
+    elif student_id.isdigit():
+        student_id=int(student_id)
+        if student_id>0:
+            student_valid_id=True
+        else:
+            print("please input non-zero values only")
+    else:
+        print("please input numbers only")
+
+#Formatted Name
+
+Formatted_Name = "STU" + str(student_id).zfill(5)
+print(Formatted_Name)
+
+#Validate Name
+
+student_valid_name = False
+while not student_valid_name:
+    student_name = input("Enter name : ")
+    student_name = student_name.strip().title()
+    name_check = student_name.replace(" ","")
+    if name_check.isalpha() and len(student_name)>=3:
+        student_valid_name=True
+        print("Name : "+student_name)
+    else:
+        if not name_check.isalpha():
+            print("please input alphabets only")
+        elif len(student_name)<3:
+            print("please input atleat 3 characters")
+
+#Email Generation
+
+name_part = student_name.split()
+first_name=name_part[0].lower()
+student_email=first_name+"."+str(student_id)+"@university.edu"
+print(student_email)
+
+#Discount Calculations
+
+base_course_fees_valid = False
+while not base_course_fees_valid:
+    base_course_fees = input("base_course_fees : ")
+    if  base_course_fees.startswith("-") and  base_course_fees[1:].isdigit():
+        print("please input Positive numbers only")
+    elif  base_course_fees.isdigit():
+        base_course_fees=int( base_course_fees)
+        if  base_course_fees>0:
+            base_course_fees_valid=True
+        else:
+            print("please input non-zero values only")
+    else:
+        print("please input numbers only")
+
+#Calculation of fees
+
+discount=0
+print("Enter description")
+description=input()
+
+if description.lower().find("reference") != -1:
+    discount+=5000
+if "scholarship" in description:
+    discount+=7000
+if "promo" in description:
+    discount+=3000
+
+final_fee=base_course_fees-discount
+
+print(f"base_course_fees : {base_course_fees}")
+print(f"you got discount : {discount}")
+print(f"final_fee : {final_fee}")
+
