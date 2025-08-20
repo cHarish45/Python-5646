@@ -212,4 +212,99 @@ def increment():
     count += 1 
 increment()    
 print("Count: ",count)
+
+# function composition
+def add(a,b):
+    return a+b    
+
+def sub(c,d,e):
+    return add(c,d) - e
+
+print(sub(3,4,5))
+
+# to check builtins in python use __builtins__
+# print(dir(__builtins__))
+
+# builtin
+text = "python"
+len_text = len(text)
+print("Using Builtin",len_text)
+
+# simulate len with our way
+def user_def_ln(s):
+    count = 0
+    for char in s:
+        count += 1
+    return count
+
+text = "python"
+len_text = user_def_ln(text)
+print("Using User Defined",len_text)
+
+# Instead of How To Do --> What To Do 
+
+# without lambda
+def add(a,b):
+    return a+b
+print(add(3,4))
+
+# with lambda -> lambda arguments: expression    
+sum = lambda a,b: a+b
+print(sum)
+print(sum(5,10))
+
+# IILE
+print((lambda a,b: a+b) (100,200))
+print((lambda a,b: a*b) (100,200))
+
+
+# without map 
+# input [1,2,3,4] --> output [1,4,9,16]
+def square_list(numbers):
+    squared_list = []
+    for n in numbers:
+        squared_list.append(n * n)
+    return squared_list
+
+print(square_list([1,2,3,4]))
+
+# with map 
+# input [1,2,3,4] --> output [1,4,9,16]
+# one liner functions 
+# map(function, iterable)
+print(map(lambda n: n * n, [1,2,3,4]))
+
+print(list(map(lambda n: n * n, [1,2,3,4])))
+
+# without filter
+# input [1,2,3,4,5,6,7,8,9,10] --> Output [2,4,6,8,10]
+def even_list(numbers):
+    even_nums = []
+    for n in numbers:
+        if n % 2 == 0:
+            even_nums.append(n)
+    return even_nums
+
+print(even_list([1,2,3,4,5,6,7,8,9,10]))
+
+# with filter 
+# input [1,2,3,4,5,6,7,8,9,10] --> Output [2,4,6,8,10]
+# one liner functions 
+# filter(function, iterable)
+print(filter(lambda n: n % 2 == 0, [1,2,3,4,5,6,7,8,9,10]))
+print(list(filter(lambda n: n % 2 == 0, [1,2,3,4,5,6,7,8,9,10])))
+
+# without reduce
+# input [1,2,3,4] -- output (1*2*3*4 = 24)
+def multiply_list(numbers):
+    result = 1
+    for i in numbers:
+        result = result * i
+    return result
     
+print(multiply_list([1,2,3,4]))
+
+# with reduce
+# input [1,2,3,4] -- output (1*2*3*4 = 24)
+from functools import reduce
+print(reduce(lambda x,y: x*y, [1,2,3,4]))
